@@ -3,7 +3,7 @@
 
 Name:           lpf-mscore-fonts
 Version:        2.2
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Bootstrap package building mscore-fonts using lpf
 
 License:        MIT
@@ -63,6 +63,9 @@ mscore-fonts non-redistributable package.
 
 
 %changelog
+* Wed Dec 25 2019 FeRD (Frank Dana) <ferdnyc@gmail.com> - 2.2-3
+- Convert Licen.TXT file to UTF-8 encoding and Unix (CR) line-endings.
+
 * Fri Mar 02 2018 RPM Fusion Release Engineering <leigh123linux@googlemail.com> - 2.2-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_28_Mass_Rebuild
 
