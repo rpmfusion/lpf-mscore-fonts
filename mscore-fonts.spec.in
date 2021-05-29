@@ -1,4 +1,4 @@
-%global fontname mscore
+%global fontname ms-core
 # directory to unpack truetype fonts from the cab into
 %global fontdir %{_datadir}/fonts/%{fontname}
 

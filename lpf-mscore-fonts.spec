@@ -3,7 +3,7 @@
 
 Name:           lpf-mscore-fonts
 Version:        2.2
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        Bootstrap package building mscore-fonts using lpf
 
 License:        MIT
@@ -12,16 +12,16 @@ Group:          Development/Tools
 BuildArch:      noarch
 Source0:        mscore-fonts.spec.in
 Source1:        Licen.TXT
-Source2:        61-mscore-arial.conf
-Source3:        61-mscore-andale.conf
-Source4:        61-mscore-comic.conf
-Source5:        61-mscore-courier.conf
-Source6:        61-mscore-georgia.conf
-Source7:        61-mscore-impact.conf
-Source8:        61-mscore-times.conf
-Source9:        61-mscore-trebuchet.conf
-Source10:       61-mscore-verdana.conf
-Source11:       61-mscore-webdings.conf
+Source2:        61-ms-core-arial.conf
+Source3:        61-ms-core-andale.conf
+Source4:        61-ms-core-comic.conf
+Source5:        61-ms-core-courier.conf
+Source6:        61-ms-core-georgia.conf
+Source7:        61-ms-core-impact.conf
+Source8:        61-ms-core-times.conf
+Source9:        61-ms-core-trebuchet.conf
+Source10:       61-ms-core-verdana.conf
+Source11:       61-ms-core-webdings.conf
 
 BuildRequires:  desktop-file-utils
 BuildRequires:  lpf
@@ -63,6 +63,9 @@ mscore-fonts non-redistributable package.
 
 
 %changelog
+* Wed May 26 2021 Sérgio Basto <sergio@serjux.com> - 2.2-4
+- Rename packages from mscore-fonts ms-core-fonts
+
 * Wed Dec 25 2019 FeRD (Frank Dana) <ferdnyc@gmail.com> - 2.2-3
 - Convert Licen.TXT file to UTF-8 encoding and Unix (CR) line-endings.
 
