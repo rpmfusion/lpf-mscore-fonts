@@ -1,4 +1,5 @@
 %global fontname ms-core
+%global oldfontname mscore
 # directory to unpack truetype fonts from the cab into
 %global fontdir %{_datadir}/fonts/%{fontname}
 
@@ -7,7 +8,7 @@
 Summary:   Microsoft core TrueType fonts for better Windows Compatibility
 Name:      %{fontname}-fonts
 Version:   1.0
-Release:   2%{?dist}
+Release:   4%{?dist}
 
 URL:       http://mscorefonts2.sourceforge.net/
 License:   non-redistributable, no commercial use, no modifications permitted
@@ -75,6 +76,7 @@ Common support files for %{fontname}-fonts packages including licenses.
 %package -n %{fontname}-arial-fonts
 Summary:  %{fontname} Arial ttf font
 Requires: %{name}-common = %{version}-%{release}
+Obsoletes: %{oldfontname}-arial-fonts <= %{version}-%{release}
 
 %description -n %{fontname}-arial-fonts
 Microsoft Arial font for the web that prior to 2002 was available from
@@ -88,6 +90,7 @@ website.
 %package -n %{fontname}-times-fonts
 Summary:  %{fontname} Times ttf font
 Requires: %{name}-common = %{version}-%{release}
+Obsoletes: %{oldfontname}-times-fonts <= %{version}-%{release}
 
 %description -n %{fontname}-times-fonts
 Microsoft Times font for the web that prior to 2002 was available from
@@ -101,6 +104,7 @@ website.
 %package -n %{fontname}-trebuchet-fonts
 Summary:  %{fontname} Trebuchet ttf font
 Requires: %{name}-common = %{version}-%{release}
+Obsoletes: %{oldfontname}-trebuchet-fonts <= %{version}-%{release}
 
 %description -n %{fontname}-trebuchet-fonts
 Microsoft Trebuchet font for the web that prior to 2002 was available
@@ -114,6 +118,8 @@ on the Microsoft website.
 %package -n %{fontname}-verdana-fonts
 Summary:  %{fontname} verdana ttf font
 Requires: %{name}-common = %{version}-%{release}
+Obsoletes: %{oldfontname}-verdana-fonts <= %{version}-%{release}
+
 
 %description -n %{fontname}-verdana-fonts
 Microsoft verdana font for the web that prior to 2002 was available from
@@ -127,6 +133,7 @@ website.
 %package -n %{fontname}-andale-fonts
 Summary:  %{fontname} Andale Mono ttf font
 Requires: %{name}-common = %{version}-%{release}
+Obsoletes: %{oldfontname}-andale-fonts <= %{version}-%{release}
 
 %description -n %{fontname}-andale-fonts
 Andale Mono font for the web that prior to 2002 was available from
@@ -138,6 +145,7 @@ http://www.microsoft.com/typography/fontpack.
 %package -n %{fontname}-comic-fonts
 Summary:  %{fontname} comic ttf font
 Requires: %{name}-common = %{version}-%{release}
+Obsoletes: %{oldfontname}-comic-fonts <= %{version}-%{release}
 
 %description -n %{fontname}-comic-fonts
 Comic bold and regular font for the web that prior to 2002 was available
@@ -149,6 +157,7 @@ from http://www.microsoft.com/typography/fontpack.
 %package -n %{fontname}-courier-fonts
 Summary:  %{fontname} courier ttf font
 Requires: %{name}-common = %{version}-%{release}
+Obsoletes: %{oldfontname}-courier-fonts <= %{version}-%{release}
 
 %description -n %{fontname}-courier-fonts
 Courier bold, bold italic, italic and regular font for the web that prior
@@ -160,6 +169,7 @@ to 2002 was available from http://www.microsoft.com/typography/fontpack.
 %package -n %{fontname}-georgia-fonts
 Summary:  %{fontname} georgia ttf font
 Requires: %{name}-common = %{version}-%{release}
+Obsoletes: %{oldfontname}-georgia-fonts <= %{version}-%{release}
 
 %description -n %{fontname}-georgia-fonts
 Georgia font for the web that prior to 2002 was available from
@@ -171,6 +181,7 @@ http://www.microsoft.com/typography/fontpack.
 %package -n %{fontname}-impact-fonts
 Summary:  %{fontname} impact ttf font
 Requires: %{name}-common = %{version}-%{release}
+Obsoletes: %{oldfontname}-impact-fonts <= %{version}-%{release}
 
 %description -n %{fontname}-impact-fonts
 Impact font for the web that prior to 2002 was available from
@@ -182,6 +193,7 @@ http://www.microsoft.com/typography/fontpack.
 %package -n %{fontname}-webdings-fonts
 Summary:  %{fontname} webdings ttf font
 Requires: %{name}-common = %{version}-%{release}
+Obsoletes: %{oldfontname}-webdings-fonts <= %{version}-%{release}
 
 %description -n %{fontname}-webdings-fonts
 Webdings font for the web that prior to 2002 was available from
@@ -226,7 +238,13 @@ done
 
 
 %changelog
-* Fri Feb 14 2014 Alec Leamas<leamas.alec@gmail.com>
+* Sun Nov 07 2021 Sérgio Basto <sergio@serjux.com> - 1.0-4
+- Add Obsoletes: old font names
+
+* Sat May 29 2021 Sérgio Basto <sergio@serjux.com> - 1.0-3
+- Rename packages from mscore-fonts ms-core-fonts
+
+* Fri Feb 14 2014 Alec Leamas<leamas.alec@gmail.com> 1.0-2
 - Lower config priority (55 -> 61)
 - New description, downplay fonts usefullness.
 

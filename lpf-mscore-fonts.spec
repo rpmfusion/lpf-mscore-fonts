@@ -3,7 +3,7 @@
 
 Name:           lpf-mscore-fonts
 Version:        2.2
-Release:        4%{?dist}
+Release:        5%{?dist}
 Summary:        Bootstrap package building mscore-fonts using lpf
 
 License:        MIT
@@ -63,6 +63,9 @@ mscore-fonts non-redistributable package.
 
 
 %changelog
+* Sun Nov 07 2021 Sérgio Basto <sergio@serjux.com> - 2.2-5
+- Add Obsoletes: old font names
+
 * Wed May 26 2021 Sérgio Basto <sergio@serjux.com> - 2.2-4
 - Rename packages from mscore-fonts ms-core-fonts
 
