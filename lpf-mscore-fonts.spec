@@ -1,16 +1,17 @@
 # %%global will not work here, lazy evaluation needed.
-%define         target_pkg %(t=%{name}; echo ${t#lpf-})
+#%%define         target_pkg %%(t=%%{name}; echo ${t#lpf-})
+%global         target_pkg  ms-core-fonts
 
 Name:           lpf-mscore-fonts
 Version:        2.2
-Release:        5%{?dist}
-Summary:        Bootstrap package building mscore-fonts using lpf
+Release:        6%{?dist}
+Summary:        Bootstrap package building ms-core-fonts using lpf
 
 License:        MIT
 URL:            https://github.com/leamas/lpf
 Group:          Development/Tools
 BuildArch:      noarch
-Source0:        mscore-fonts.spec.in
+Source0:        ms-core-fonts.spec.in
 Source1:        Licen.TXT
 Source2:        61-ms-core-arial.conf
 Source3:        61-ms-core-andale.conf
@@ -30,7 +31,9 @@ Requires:       lpf
 
 %description
 Bootstrap package allowing the lpf system to build the
-mscore-fonts non-redistributable package.
+ms-core-fonts non-redistributable package.
+Packages have been renamed to ms-core, to avoid conflicts with mscore package
+(MuseScore base music font)
 
 
 %prep
@@ -57,12 +60,16 @@ mscore-fonts non-redistributable package.
 
 
 %files
-%{_datadir}/applications/%{name}.desktop
+%{_datadir}/applications/lpf-ms-core-fonts.desktop
 %{_datadir}/lpf/packages/%{target_pkg}
 %attr(775,pkg-build,pkg-build) /var/lib/lpf/packages/%{target_pkg}
 
 
 %changelog
+* Wed May 04 2022 Sérgio Basto <sergio@serjux.com> - 2.2-6
+- rename mscore-fonts.spec.in to ms-core-fonts.spec.in to lpf work porperly
+  and mark packages as installed
+
 * Sun Nov 07 2021 Sérgio Basto <sergio@serjux.com> - 2.2-5
 - Add Obsoletes: old font names
 
